@@ -11,7 +11,7 @@ public class ContainerOutline : MonoBehaviour
     {
         outline = GetComponent<LineRenderer>();
         outline.positionCount = 4;
-
+        outline.useWorldSpace = false;
         UpdateOutline();
     }
 
@@ -46,6 +46,20 @@ public class ContainerOutline : MonoBehaviour
     {
         Vector3[] corners = new Vector3[4];
         containerRect.GetWorldCorners(corners);
+        
+        Canvas canvas = containerRect.GetComponentInParent<Canvas>();
+        if (canvas != null)
+        {
+            for (int i = 0; i < corners.Length; i++)
+            {
+                // Convert the world position to local position relative to the canvas
+                corners[i] = canvas.transform.InverseTransformPoint(corners[i]);
+                // Then convert from canvas space to local space of the LineRenderer
+                corners[i] = transform.InverseTransformPoint(canvas.transform.TransformPoint(corners[i]));
+            }
+        }
+
+        
         outline.SetPositions(corners);
     }
 

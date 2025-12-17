@@ -48,7 +48,8 @@ public class NavigationButtonPool : MonoBehaviour
 
     public void ReleaseAllButtons()
     {
-        foreach (GameObject button in activeButtons) ReleaseButton(button);
+        var toRelease = new List<GameObject>(activeButtons);
+        foreach (GameObject button in toRelease) ReleaseButton(button);
     }
     
 }

@@ -374,6 +374,14 @@ PrefabInstance:
       propertyPath: m_Positions.Array.data[3].y
       value: -30
       objectReference: {fileID: 0}
+    - target: {fileID: 8747252373813054846, guid: e3cb0a62efe4641478c376436524f4d9, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0.02627945
+      objectReference: {fileID: 0}
+    - target: {fileID: 8747252373813054846, guid: e3cb0a62efe4641478c376436524f4d9, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.10000038
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
