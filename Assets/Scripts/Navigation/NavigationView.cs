@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using System;
+using TMPro;
 
 /// <summary>
 /// Responsible for the visual representation of the room navigation screen.
@@ -49,8 +50,24 @@ public class NavigationView : MonoBehaviour
     {
         foreach (RoomSO room in rooms) {
             GameObject button = navButtonPool.GetButton(parent);
-            button.GetComponentInChildren<Text>().text = room.roomName;
-            button.GetComponent<Button>().onClick.AddListener(() => OnNavButtonClicked(room));
+            var buttonView = button.GetComponent<NavButtonView>();
+            if (button == null)
+            {
+                Debug.LogWarning("Failed to get button from pool!");
+                continue;
+            }
+
+            var buttonText = buttonView.buttonText;
+            if (buttonText == null)
+            {
+                Debug.LogWarning("Failed to get button text from button!");
+                continue;
+            }
+            buttonText.text = room.roomName;
+            
+            buttonView.button.onClick.AddListener(() => OnNavButtonClicked(room));
+            
+            button.SetActive(true);
         }
     }
     
