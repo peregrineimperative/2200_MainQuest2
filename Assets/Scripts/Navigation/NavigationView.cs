@@ -8,16 +8,19 @@ using System;
 /// </summary>
 public class NavigationView : MonoBehaviour
 {
-    [Header("Prefabs")]
-    [SerializeField] private GameObject navButtonPrefab;
-    [SerializeField] private GameObject interactButtonPrefab;
+    [Header("Button Object Pool")]
+    [SerializeField] private NavigationButtonPool navButtonPool;
+    
+    //[Header("Prefabs")]
+    //[SerializeField] private GameObject navButtonPrefab;
+    //[SerializeField] private GameObject interactButtonPrefab;
     
     [Header("Button Parent Transforms")]
     [SerializeField] private Transform navButtonParentUp;
     [SerializeField] private Transform navButtonParentDown;
     [SerializeField] private Transform navButtonParentLeft;
     [SerializeField] private Transform navButtonParentRight;
-    [SerializeField] private Transform interactButtonParent;
+    //[SerializeField] private Transform interactButtonParent;
 
     //Lists of IDs for adjacent rooms. (Normally only one in a given direction, but allows for more.)
     public List<int> AdjRoomsUp { get; set; }
@@ -30,8 +33,11 @@ public class NavigationView : MonoBehaviour
     
    
     
-    public void RefreshVisuals()
+    public void RefreshNavVisuals(
+        
     {
+        navButtonPool.ReleaseAllButtons();
+        
         foreach (int roomID in AdjRoomsUp)
         {
             GameObject newButton = Instantiate(navButtonPrefab, navButtonParentUp.transform);
