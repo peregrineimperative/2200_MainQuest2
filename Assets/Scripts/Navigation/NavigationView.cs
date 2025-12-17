@@ -11,8 +11,9 @@ public class NavigationView : MonoBehaviour
     [Header("Button Object Pool")]
     [SerializeField] private NavigationButtonPool navButtonPool;
     
+    
     //[Header("Prefabs")]
-    //[SerializeField] private GameObject navButtonPrefab;
+    [SerializeField] private GameObject navButtonPrefab;
     //[SerializeField] private GameObject interactButtonPrefab;
     
     [Header("Button Parent Transforms")]
@@ -23,29 +24,34 @@ public class NavigationView : MonoBehaviour
     //[SerializeField] private Transform interactButtonParent;
 
     //Lists of IDs for adjacent rooms. (Normally only one in a given direction, but allows for more.)
-    public List<int> AdjRoomsUp { get; set; }
-    public List<int> AdjRoomsDown { get; set; }
-    public List<int> AdjRoomsLeft { get; set; }
-    public List<int> AdjRoomsRight { get; set; }
+    //public List<int> AdjRoomsUp { get; set; }
+    //public List<int> AdjRoomsDown { get; set; }
+    //public List<int> AdjRoomsLeft { get; set; }
+    //public List<int> AdjRoomsRight { get; set; }
 
     //Delegates to inform NavigationController of button clicks
     public event Action<RoomSO> OnNavButtonClicked;
     
-   
-    
     public void RefreshNavVisuals(
-        
+        List<RoomSO> adjRoomsUp, 
+        List<RoomSO> adjRoomsDown, 
+        List<RoomSO> adjRoomsLeft, 
+        List<RoomSO> adjRoomsRight)
     {
         navButtonPool.ReleaseAllButtons();
-        
-        foreach (int roomID in AdjRoomsUp)
-        {
-            GameObject newButton = Instantiate(navButtonPrefab, navButtonParentUp.transform);
+        SetDirectionalButtons(adjRoomsUp, navButtonParentUp);
+        SetDirectionalButtons(adjRoomsDown, navButtonParentDown);
+        SetDirectionalButtons(adjRoomsLeft, navButtonParentLeft);
+        SetDirectionalButtons(adjRoomsRight, navButtonParentRight);
+    }
 
-            newButton.GetComponent<Button>().onClick.AddListener(() => OnNavButtonClicked?.Invoke(roomID));
+    private void SetDirectionalButtons(List<RoomSO> rooms, Transform parent)
+    {
+        foreach (RoomSO room in rooms) {
+            GameObject button = navButtonPool.GetButton(parent);
+            button.GetComponentInChildren<Text>().text = room.roomName;
+            button.GetComponent<Button>().onClick.AddListener(() => OnNavButtonClicked(room));
         }
     }
-    
-    public void SetUpButtons
     
 }

@@ -391,6 +391,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430455378}
   m_CullTransparentMesh: 1
+--- !u!1 &465673929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 465673930}
+  m_Layer: 0
+  m_Name: Managers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &465673930
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465673929}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 920390806}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,6 +568,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1763321774}
     m_Modifications:
+    - target: {fileID: -3957930092538935547, guid: e76bef816d201a0449d1cc97cd4f80bf, type: 3}
+      propertyPath: roomDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: cf323e4b1a3f2a4438973809cd9a170b, type: 2}
+    - target: {fileID: -396132751935862014, guid: e76bef816d201a0449d1cc97cd4f80bf, type: 3}
+      propertyPath: navButtonPool
+      value: 
+      objectReference: {fileID: 531121082}
     - target: {fileID: 3094634311286998917, guid: e76bef816d201a0449d1cc97cd4f80bf, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -623,13 +663,36 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4272695670150207179, guid: e76bef816d201a0449d1cc97cd4f80bf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 531121082}
   m_SourcePrefab: {fileID: 100100000, guid: e76bef816d201a0449d1cc97cd4f80bf, type: 3}
 --- !u!224 &531121080 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3094634311286998917, guid: e76bef816d201a0449d1cc97cd4f80bf, type: 3}
   m_PrefabInstance: {fileID: 531121079}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &531121081 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4272695670150207179, guid: e76bef816d201a0449d1cc97cd4f80bf, type: 3}
+  m_PrefabInstance: {fileID: 531121079}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &531121082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531121081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb32b15d017bed94aadbe63da478f6d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  navigationButtonPrefab: {fileID: 7751339112993011988, guid: 59c683234ab3a1b439d7379d90e9c6ba, type: 3}
+  defaultParent: {fileID: 531121080}
+  buttonPoolSize: 12
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,6 +855,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &920390805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 920390806}
+  m_Layer: 0
+  m_Name: NavigationManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &920390806
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920390805}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 465673930}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1206794495 stripped
 RectTransform:
@@ -1791,3 +1885,4 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 1763321774}
   - {fileID: 711572057}
+  - {fileID: 465673930}
