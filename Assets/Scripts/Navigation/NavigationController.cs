@@ -12,8 +12,26 @@ public class NavigationController : MonoBehaviour
         currentRoom = startingRoom;
     }
 
-    public void OnNavButtonClicked(RoomSO targetRoom)
+    private void OnEnable()
+    {
+        if (navView != null)
+        {
+            navView.OnNavButtonClicked += GoToRoom;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (navView != null)
+        {
+            navView.OnNavButtonClicked -= GoToRoom;
+        }
+    }
+    
+    private void GoToRoom(RoomSO targetRoom)
     {
         currentRoom = targetRoom;
+        
+        
     }
 }
