@@ -26,13 +26,9 @@ public class NavigationView : MonoBehaviour
     public List<int> AdjRoomsRight { get; set; }
 
     //Delegates to inform NavigationController of button clicks
-    public event Action<int> OnNavButtonClicked;
-    //public event Action OnInteractButtonClicked;
+    public event Action<RoomSO> OnNavButtonClicked;
     
-    private void Awake()
-    {
-        
-    }
+   
     
     public void RefreshVisuals()
     {
@@ -43,5 +39,7 @@ public class NavigationView : MonoBehaviour
             newButton.GetComponent<Button>().onClick.AddListener(() => OnNavButtonClicked?.Invoke(roomID));
         }
     }
+    
+    public void SetUpButtons
     
 }
