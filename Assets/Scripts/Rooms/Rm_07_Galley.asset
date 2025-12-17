@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57057fceb21921d4e941b8045fa6db3c, type: 3}
+  m_Name: Rm_07_Galley
+  m_EditorClassIdentifier: 
+  roomID: 7
+  roomName: Galley
+  roomDescription: '[Galley description]'
+  roomBackground: {fileID: 0}
+  adjRoomsUp: []
+  adjRoomsDown: []
+  adjRoomsLeft:
+  - {fileID: 11400000, guid: e0040c4cbdb0ae242b8ec28e9ba77460, type: 2}
+  adjRoomsRight:
+  - {fileID: 11400000, guid: 16bd1a311c64cbf4dbac7eac2b105bc3, type: 2}
+  characters: []
