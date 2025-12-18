@@ -30,12 +30,14 @@ public class NavigationController : MonoBehaviour
         }
     }
     
+    //Call when moving to a new room via navigation button
     private void GoToRoom(RoomSO targetRoom)
     {
         currentRoom = targetRoom;
         ShowCurrentRoom();
     }
 
+    //Display current room information (navigation buttons, interactable characters, etc.)
     private void ShowCurrentRoom()
     {
         navView.RefreshNavVisuals(

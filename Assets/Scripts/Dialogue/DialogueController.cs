@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -5,16 +6,41 @@ public class DialogueController : MonoBehaviour
 {
     private DialogueNodeSO CurrentDialogueNode { get; set; }
 
-    [SerializeField] private DialogueNodeSO startingDialogueNode;
+    private CharacterSO CurrentSpeaker { get; set; }
+    
+    //[SerializeField] private DialogueNodeSO startingDialogueNode;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextMeshProUGUI promptText;
     [SerializeField] private TextMeshProUGUI nameText;
 
-    private void Start()
+    private void OnEnable()
     {
-        CurrentDialogueNode = startingDialogueNode;
-        UpdateVisual();
+        StartNewDialogue(CurrentSpeaker);
     }
+
+    private void StartNewDialogue(CharacterSO speaker)
+    {
+        CurrentSpeaker = speaker;
+    }
+
+    private DialogueNodeSO DetermineStartingDialogueNode()
+    {
+        //1. Look through list of active quest steps to see if one involves this character
+        //If so, start from that step's associated dialogue node
+        
+        //2. Else, check if friendship score is above 0 (unmet if zero)
+        //If not, use character's introductory dialogue node
+        
+        //3. Else, use character's default dialogue node
+    }
+    
+    
+    private DialogueNodeSO GetNextDialogueNode(CharacterSO speaker)
+    {
+        
+    }
+    
+    
 
     private void UpdateVisual()
     {
