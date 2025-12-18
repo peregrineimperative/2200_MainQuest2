@@ -32,12 +32,14 @@ public class DialogueController : MonoBehaviour
         //If not, use character's introductory dialogue node
         
         //3. Else, use character's default dialogue node
+
+        return null;
     }
     
     
     private DialogueNodeSO GetNextDialogueNode(CharacterSO speaker)
     {
-        
+        return null;
     }
     
     
