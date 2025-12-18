@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class DialogueController : MonoBehaviour
 {
+    public static DialogueController Instance { get; private set; }
     private DialogueNodeSO CurrentDialogueNode { get; set; }
-
-    private CharacterSO CurrentSpeaker { get; set; }
+    public CharacterSO CurrentSpeaker { get; set; }
     
     //[SerializeField] private DialogueNodeSO startingDialogueNode;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextMeshProUGUI promptText;
     [SerializeField] private TextMeshProUGUI nameText;
 
+    private void Awake()
+    {
+        //Singleton pattern
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+        DontDestroyOnLoad(gameObject);
+    }
+    
     private void OnEnable()
     {
         StartNewDialogue(CurrentSpeaker);

@@ -17,10 +17,15 @@ public class GameStateController : MonoBehaviour
     //References to possible states in the game
     [Header("States")]
     //[SerializeField] private GameStateSO MainMenuState;
-    [SerializeField] private GameStateSO NavigationState;
-    [SerializeField] private GameStateSO DialogueState;
-    [SerializeField] private GameStateSO ComputerState;
-    [SerializeField] private GameStateSO PauseMenuState;
+    [SerializeField] private GameStateSO navigationState;
+    [SerializeField] private GameStateSO dialogueState;
+    [SerializeField] private GameStateSO computerState;
+    [SerializeField] private GameStateSO pauseMenuState;
+    
+    public GameStateSO NavigationState => navigationState;
+    public GameStateSO DialogueState => dialogueState;
+    public GameStateSO ComputerState => computerState;
+    public GameStateSO PauseMenuState => pauseMenuState;
     
     private void Awake()
     {
@@ -33,7 +38,7 @@ public class GameStateController : MonoBehaviour
         {
             Instance = this;
         }
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(gameObject);
         
         //Initialize the stack
         GameStateStack = new Stack<GameStateSO>();

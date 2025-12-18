@@ -56,6 +56,7 @@ public class NavigationController : MonoBehaviour
 
     private void StartDialogue(CharacterSO character)
     {
-        
+        DialogueController.Instance.CurrentSpeaker = character;
+        GameStateController.Instance.EnterState(GameStateController.Instance.DialogueState);
     }
 }
