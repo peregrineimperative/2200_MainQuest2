@@ -68,17 +68,16 @@ public class ButtonPool<T> where T: Component
         buttons.Enqueue(button);
 
         //clear previous navigation assignment
-        var listener = button.GetComponent<Button>();
-        if (listener != null) listener.onClick.RemoveAllListeners();
+        if (button is Button listener) listener.onClick.RemoveAllListeners();
 
         //deactivate and remove from parent
-        button.SetActive(false);
+        button.gameObject.SetActive(false);
         button.transform.SetParent(defaultParent, false);
     }
 
     public void ReleaseAllButtons()
     {
-        var toRelease = new List<GameObject>(activeButtons);
-        foreach (GameObject button in toRelease) ReleaseButton(button);
+        var toRelease = new List<T>(activeButtons);
+        foreach (T button in toRelease) ReleaseButton(button);
     }
 }
