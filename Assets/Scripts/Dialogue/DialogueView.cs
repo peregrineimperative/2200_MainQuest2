@@ -1,15 +1,25 @@
 using UnityEngine;
+using TMPro;
+using System;
 
 public class DialogueView : MonoBehaviour
-{
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+{ 
+    [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private TextMeshProUGUI titleText;
+    [SerializeField] private TextMeshProUGUI nameText;
+    
+    [SerializeField] private Transform promptButtonParent;
+    
+    private ButtonPool<ButtonView> promptButtonPool;
+    
+    public event Action<DialogueNodeSO> OnPromptButtonClicked;
+    
+    public void RefreshDialogueVisuals(DialogueNodeSO dialogueNode)
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void SetPromptButtons()
     {
         
     }
