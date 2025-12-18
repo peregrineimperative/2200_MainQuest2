@@ -421,6 +421,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 920390806}
+  - {fileID: 1755860493}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
@@ -1187,6 +1188,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537767538}
   m_CullTransparentMesh: 1
+--- !u!1 &1755860492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1755860493}
+  - component: {fileID: 1755860494}
+  m_Layer: 0
+  m_Name: GameStateManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1755860493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755860492}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 465673930}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1755860494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755860492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b989586ae757f04cb234a38667461d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NavigationState: {fileID: 11400000, guid: 273582f26dfe0234797609a52ad8c70c, type: 2}
+  DialogueState: {fileID: 11400000, guid: 94d7a89ec6307dc4e959869bea6e2ccb, type: 2}
+  ComputerState: {fileID: 11400000, guid: ae2a2fcb61b8b254ea0f3a874e9dbb90, type: 2}
+  PauseMenuState: {fileID: 11400000, guid: 267fe9b80d88789449a8fcc70b215369, type: 2}
 --- !u!1 &1763321770
 GameObject:
   m_ObjectHideFlags: 0
@@ -1199,7 +1248,6 @@ GameObject:
   - component: {fileID: 1763321773}
   - component: {fileID: 1763321772}
   - component: {fileID: 1763321771}
-  - component: {fileID: 1763321775}
   m_Layer: 5
   m_Name: GameScreenCanvas
   m_TagString: Untagged
@@ -1296,22 +1344,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1763321775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1763321770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b989586ae757f04cb234a38667461d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NavigationState: {fileID: 11400000, guid: 273582f26dfe0234797609a52ad8c70c, type: 2}
-  DialogueState: {fileID: 11400000, guid: 94d7a89ec6307dc4e959869bea6e2ccb, type: 2}
-  ComputerState: {fileID: 11400000, guid: ae2a2fcb61b8b254ea0f3a874e9dbb90, type: 2}
-  PauseMenuState: {fileID: 11400000, guid: 267fe9b80d88789449a8fcc70b215369, type: 2}
 --- !u!224 &1985139496 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3863155391913220746, guid: c92476715bc6f51469b2213564a61b63, type: 3}

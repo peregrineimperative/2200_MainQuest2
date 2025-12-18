@@ -42,12 +42,18 @@ public class NavigationController : MonoBehaviour
             currentRoom.adjRoomsUp, 
             currentRoom.adjRoomsDown, 
             currentRoom.adjRoomsLeft, 
-            currentRoom.adjRoomsRight
+            currentRoom.adjRoomsRight,
+            currentRoom.characters
             );
     }
     
     private RoomSO GetRoomByID(int roomID)
     {
         return roomDatabase.GetRoomByID(roomID);
+    }
+
+    private void StartDialogue(CharacterSO character)
+    {
+        
     }
 }

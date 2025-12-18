@@ -20,29 +20,34 @@ public class NavigationView : MonoBehaviour
     [SerializeField] private Transform navButtonParentRight;
     [SerializeField] private Transform interactButtonParent;
 
+    //Button pools
     private ButtonPool<NavButtonView> navButtonPool;
-    //private ButtonPool<InteractButtonView> interactButtonPool;
+    private ButtonPool<ButtonView> interactButtonPool;
     
     private void Awake()
     {
         navButtonPool = new ButtonPool<NavButtonView>(navButtonPrefab, transform, 12);
-        //interactButtonPool = new ButtonPool<Button>(interactButtonPrefab, interactButtonParent, 10);
+        interactButtonPool = new ButtonPool<ButtonView>(interactButtonPrefab, interactButtonParent, 10);
     }
     
     //Delegates to inform NavigationController of button clicks
     public event Action<RoomSO> OnNavButtonClicked;
+    public event Action<CharacterSO> OnInteractButtonClicked;
     
     public void RefreshNavVisuals(
         List<RoomSO> adjRoomsUp, 
         List<RoomSO> adjRoomsDown, 
         List<RoomSO> adjRoomsLeft, 
-        List<RoomSO> adjRoomsRight)
+        List<RoomSO> adjRoomsRight,
+        List<CharacterSO> characters)
     {
         navButtonPool.ReleaseAllButtons();
         SetDirectionalButtons(adjRoomsUp, navButtonParentUp);
         SetDirectionalButtons(adjRoomsDown, navButtonParentDown);
         SetDirectionalButtons(adjRoomsLeft, navButtonParentLeft);
         SetDirectionalButtons(adjRoomsRight, navButtonParentRight);
+        
+        SetInteractionButtons(characters, interactButtonParent);
     }
 
     private void SetDirectionalButtons(List<RoomSO> rooms, Transform parent)
@@ -67,7 +72,21 @@ public class NavigationView : MonoBehaviour
             
             buttonView.buttonText.text = room.roomName;
             
-            buttonView.button.onClick.AddListener(() => OnNavButtonClicked(room));
+            buttonView.button.onClick.AddListener(() => OnNavButtonClicked?.Invoke(room));
+            
+            buttonView.gameObject.SetActive(true);
+        }
+    }
+
+    private void SetInteractionButtons(List<CharacterSO> characters, Transform parent)
+    {
+        foreach (CharacterSO character in characters)
+        {
+            ButtonView buttonView = interactButtonPool.GetButton(parent);
+            
+            buttonView.ButtonText.text = character.characterName;
+            
+            buttonView.Button.onClick.AddListener(() => OnInteractButtonClicked?.Invoke(character));
             
             buttonView.gameObject.SetActive(true);
         }

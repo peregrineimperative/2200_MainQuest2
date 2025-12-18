@@ -2,8 +2,15 @@ using System;
 using UnityEngine;
 using System.Collections.Generic;
 
+/// <summary>
+/// Maintains/keeps track of the current game state via a stack.
+/// New game states are entered and pushed onto the stack, and when exited, the game returns to the previous state.
+/// </summary>
 public class GameStateController : MonoBehaviour
 {
+    //Singleton pattern
+    public static GameStateController Instance { get; private set; }
+    
     //Current state of the game.
     private Stack<GameStateSO> GameStateStack { get; set; }
     
@@ -17,6 +24,18 @@ public class GameStateController : MonoBehaviour
     
     private void Awake()
     {
+        //Singleton pattern
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+        DontDestroyOnLoad(this.gameObject);
+        
+        //Initialize the stack
         GameStateStack = new Stack<GameStateSO>();
         GameStateStack.Push(NavigationState); //Set this to whatever should be the default game state. (Currently Navigation, but if I am cool and implement a MainMenu, then do that instead.)
     }
