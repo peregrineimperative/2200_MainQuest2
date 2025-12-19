@@ -1,12 +1,12 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-[CreateAssetMenu(fileName = "DialogueNodeSO", menuName = "Scriptable Objects/DialogueNodeSO")]
+[CreateAssetMenu(fileName = "DialogueNodeSO", menuName = "DialogueNode")]
 public class DialogueNodeSO : ScriptableObject
 {
     
     public CharacterSO speaker;
-    
+    [TextArea(2, 5)] 
     public string[] dialogueText;
     public List<DialogueChoice> Choices = new();
 }

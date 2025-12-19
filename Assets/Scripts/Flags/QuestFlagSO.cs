@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "QuestFlagSO", menuName = "Scriptable Objects/QuestFlagSO")]
+[CreateAssetMenu(fileName = "QuestFlagSO", menuName = "QuestFlag")]
 public class QuestFlagSO : ScriptableObject
 {
     
