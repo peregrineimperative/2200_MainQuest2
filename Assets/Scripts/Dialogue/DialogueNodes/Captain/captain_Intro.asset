@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 656fa48d3d5f34c44857ee1b866a4b7b, type: 3}
   m_Name: captain_Intro
   m_EditorClassIdentifier: 
-  speaker: {fileID: 0}
+  speaker: {fileID: 11400000, guid: 30ca9284331ce914f8964dca339e7a39, type: 2}
   dialogueText: []
-  Choices: []
+  choices: []
