@@ -16,7 +16,7 @@ MonoBehaviour:
   dialogueText:
   - '"Ah. Thanks for letting me know in person. No hard feelings. Best of luck to
     you."'
-  Choices:
+  choices:
   - choiceText: '"Same to you. Safe travels."'
     destinationNode: {fileID: 0}
     endDialogue: 1

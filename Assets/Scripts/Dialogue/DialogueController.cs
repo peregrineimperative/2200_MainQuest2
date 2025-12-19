@@ -31,12 +31,6 @@ public class DialogueController : MonoBehaviour
         {
             dialogueView.OnPromptButtonClicked += GoToNextNode;
         }
-        
-        if (CurrentSpeaker != null)
-        {
-            StartNewDialogue(CurrentSpeaker);
-        }
-
     }
     
     private void OnDisable()
@@ -46,24 +40,10 @@ public class DialogueController : MonoBehaviour
 
     public void StartNewDialogue(CharacterSO speaker)
     {
-        if (speaker == null)
-        {
-            Debug.LogWarning("StartNewDialogue called with null speaker.");
-            return;
-        }
-
         CurrentSpeaker = speaker;
         CurrentDialogueNode = DetermineStartingDialogueNode();
-
-        if (CurrentDialogueNode == null)
-        {
-            Debug.LogWarning($"No starting dialogue node found for {speaker.characterName}");
-            return;
-        }
-
-        // Tell the view to update itself
-        //dialogueView.ShowNode(CurrentSpeaker, CurrentDialogueNode);
-
+        
+        dialogueView.RefreshDialogueVisuals(CurrentDialogueNode);
     }
 
     private DialogueNodeSO DetermineStartingDialogueNode()
@@ -103,6 +83,6 @@ public class DialogueController : MonoBehaviour
         }
 
         CurrentDialogueNode = nextNode;
-        //dialogueView.ShowNode(CurrentSpeaker, CurrentDialogueNode);
+        dialogueView.RefreshDialogueVisuals(CurrentDialogueNode);
     }
 }

@@ -16,10 +16,10 @@ MonoBehaviour:
   dialogueText:
   - '"Glad to hear it! Our botanist has been begging for a second pair of hands for
     a while now. Wouldn''t let me leave my desk until I read your file. Be sure to
-    thank him for the offer."'
-  Choices:
-  - choiceText: '"Absolutely! I''ve already started reading through his documentation
-      and publications!"'
+    thank Dr. Pavin for the offer."'
+  choices:
+  - choiceText: "\"Absolutely! I've already started reading through his documentation\r\n     
+      and publications!\""
     destinationNode: {fileID: 11400000, guid: 57974082e77b151419557d0ebe6738ad, type: 2}
     endDialogue: 0
     requiredQuestFlags: []

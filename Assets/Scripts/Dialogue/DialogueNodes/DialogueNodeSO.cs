@@ -8,12 +8,13 @@ public class DialogueNodeSO : ScriptableObject
     public CharacterSO speaker;
     [TextArea(2, 5)] 
     public string[] dialogueText;
-    public List<DialogueChoice> Choices = new();
+    public List<DialogueChoice> choices = new();
 }
 
 [System.Serializable]
 public class DialogueChoice{
     [Header("UI")]
+    [TextArea(2, 5)] 
     public string choiceText;
     
     [Header("Flow")]

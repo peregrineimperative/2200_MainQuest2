@@ -1922,6 +1922,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -753.4525
       objectReference: {fileID: 0}
+    - target: {fileID: 7223789924581932979, guid: c92476715bc6f51469b2213564a61b63, type: 3}
+      propertyPath: promptButtonPrefab
+      value: 
+      objectReference: {fileID: 7751339112993011988, guid: fb9f1ef267470394d9654e0c7aefca2a, type: 3}
     - target: {fileID: 8672542423916799750, guid: c92476715bc6f51469b2213564a61b63, type: 3}
       propertyPath: m_Name
       value: DialogueCanvas

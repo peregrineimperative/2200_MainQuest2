@@ -573,6 +573,7 @@ MonoBehaviour:
   titleText: {fileID: 4297965744463565504}
   nameText: {fileID: 4991146953990556058}
   promptButtonParent: {fileID: 8679629710326501631}
+  promptButtonPrefab: {fileID: 0}
 --- !u!1 &8886366990030294147
 GameObject:
   m_ObjectHideFlags: 0

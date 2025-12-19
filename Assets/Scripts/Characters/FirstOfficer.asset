@@ -15,4 +15,4 @@ MonoBehaviour:
   characterRole: First Officer
   characterName: Kasheen
   introDialogueNode: {fileID: 11400000, guid: 3763957390fa39945bbfbdee73ef45b9, type: 2}
-  defaultStartingDialogueNode: {fileID: 0}
+  defaultStartingDialogueNode: {fileID: 11400000, guid: be282a5a8726a0640b85750dbde56ee7, type: 2}

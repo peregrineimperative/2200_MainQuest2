@@ -17,7 +17,7 @@ MonoBehaviour:
   - '"Leaving your home system isn''t something to take lightly. I was nervous the
     first time I stepped foot on a jump-craft. If you have any questions, or need
     any advice,  let me or your supervisor Dr. Pavin know."'
-  Choices:
+  choices:
   - choiceText: '"I have been looking forward to meeting Dr. Pavin."'
     destinationNode: {fileID: 11400000, guid: 57974082e77b151419557d0ebe6738ad, type: 2}
     endDialogue: 0

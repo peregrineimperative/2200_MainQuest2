@@ -17,9 +17,9 @@ MonoBehaviour:
   - '"I''m sure he''ll be happy to hear it. I think he''s been looking forward to
     have someone who understands all the plant jargon. Most of us are better acquainted
     with wires and cables than leaves and branches."'
-  Choices:
-  - choiceText: '"I''ll certainly do my best to keep up. Maybe even learn some of
-      the wire and cable stuff, while I''m at it."'
+  choices:
+  - choiceText: "\"I'll certainly do my best to keep up. Maybe even learn some of\r\n     
+      the wire and cable stuff, while I'm at it.\""
     destinationNode: {fileID: 11400000, guid: 1c601f5c4c64a664b9ab6e4ebe0a0ab1, type: 2}
     endDialogue: 0
     requiredQuestFlags: []

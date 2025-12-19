@@ -19,16 +19,16 @@ MonoBehaviour:
     with the captain, this is a quick refuel stop for us, and the station doesn't
     want us sitting around for more than a half-cycle. That said, are you good to
     go? No worries if you need to back out.\""
-  Choices:
-  - choiceText: '"Agriculture gig on a interstellar hauler? I''ve been good to go
-      since you sent the offer!"'
+  choices:
+  - choiceText: "\"Agriculture gig on a interstellar hauler? I've been good to go\r\n     
+      since you sent the offer!\""
     destinationNode: {fileID: 11400000, guid: 0f30acb42e69b824fb66c34a64d14a73, type: 2}
     endDialogue: 0
     requiredQuestFlags: []
     forbiddenQuestFlags: []
     grantFlags: []
-  - choiceText: '"I''d be lying if I said I wasn''t nervous, but I''d regret passing
-      up on the chance to get out of here."'
+  - choiceText: "\"I'd be lying if I said I wasn't nervous, but I'd regret passing\r\n     
+      up on the chance to get out of here.\""
     destinationNode: {fileID: 11400000, guid: ff136be2eda51ea45a954d446bf69c80, type: 2}
     endDialogue: 0
     requiredQuestFlags: []
