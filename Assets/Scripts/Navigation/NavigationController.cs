@@ -45,7 +45,9 @@ public class NavigationController : MonoBehaviour
             currentRoom.adjRoomsDown, 
             currentRoom.adjRoomsLeft, 
             currentRoom.adjRoomsRight,
-            currentRoom.characters
+            currentRoom.characters,
+            currentRoom.roomName,
+            currentRoom.roomDescription
             );
     }
     

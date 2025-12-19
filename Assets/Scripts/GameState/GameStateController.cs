@@ -26,6 +26,13 @@ public class GameStateController : MonoBehaviour
     public GameStateSO DialogueState => dialogueState;
     public GameStateSO ComputerState => computerState;
     public GameStateSO PauseMenuState => pauseMenuState;
+    
+    [Header("State Canvases")]
+    [SerializeField] private Canvas navigationCanvas;
+    [SerializeField] private Canvas dialogueCanvas;
+    [SerializeField] private Canvas computerCanvas;
+    [SerializeField] private Canvas pauseMenuCanvas;
+
 
     [Header("New Game Information")] 
     [SerializeField] private CharacterSO openingCharacter;
@@ -47,47 +54,94 @@ public class GameStateController : MonoBehaviour
         GameStateStack = new Stack<GameStateSO>();
         GameStateStack.Push(NavigationState); //Set this to whatever should be the default game state. (Currently Navigation, but if I am cool and implement a MainMenu, then do that instead.)
         
+    }
+
+    private void Start()
+    {
         //Inelegant, but whatever
         //Jump straight to opening dialogue
         StartNewGame();
     }
-
+    
+    //terrible if-statement town
+    private Canvas GetCanvasForState(GameStateSO state)
+    {
+        if (state == navigationState) return navigationCanvas;
+        if (state == dialogueState)   return dialogueCanvas;
+        if (state == computerState)   return computerCanvas;
+        if (state == pauseMenuState)  return pauseMenuCanvas;
+        return null;
+    }
+    
     //Accessor for current game state
     public GameStateSO CurrentState => GameStateStack.Peek();
     
     //Call when moving to a new state (opening a new window, basically)
     public void EnterState(GameStateSO newState)
     {
-        PauseState();
+        var currentCanvas = GetCanvasForState(CurrentState);
+        PauseCanvas(currentCanvas);
         GameStateStack.Push(newState);
-        CurrentState.stateCanvas.gameObject.SetActive(true);
+        
+        var newCanvas = GetCanvasForState(newState);
+        newCanvas.gameObject.SetActive(true);
+        ResumeCanvas(newCanvas);
     }
     
     //Call when leaving a state entirely (a window is being closed)
     public void ExitState()
     {
-        CurrentState.stateCanvas.gameObject.SetActive(false);
+        var currentCanvas = GetCanvasForState(CurrentState);
+        currentCanvas.gameObject.SetActive(false);
         GameStateStack.Pop();
-        ResumeState();
+        
+        var newCanvas = GetCanvasForState(CurrentState);
+        ResumeCanvas(newCanvas);
     }
 
     //Call when moving to a new state without closing the current one.
-    private void PauseState()
+    private void PauseCanvas(Canvas canvas)
     {
-        CurrentState.stateCanvas.GetComponent<CanvasGroup>().alpha = 0.5f;
-        CurrentState.stateCanvas.GetComponent<CanvasGroup>().interactable = false;
+        var group = canvas.GetComponent<CanvasGroup>();
+        if (group == null) return;
+        group.alpha = .5f;
+        group.interactable = false;
     }
     
     //Call to activate a previous window when it becomes the top state in the stack.
-    private void ResumeState()
+    private void ResumeCanvas(Canvas canvas)
     {
-        CurrentState.stateCanvas.GetComponent<CanvasGroup>().alpha = 1f;
-        CurrentState.stateCanvas.GetComponent<CanvasGroup>().interactable = true;
+        var group = canvas.GetComponent<CanvasGroup>();
+        if (group == null) return;
+        group.alpha = 1f;
+        group.interactable = true;
     }
+
 
     private void StartNewGame()
     {
-        DialogueController.Instance.StartNewDialogue(openingCharacter);
+        //debugging
+        if (DialogueState == null)
+        {
+            Debug.LogError("DialogueState is not assigned on GameStateController.");
+            return;
+        }
+        
         EnterState(DialogueState);
+        
+        //debugging
+        if (DialogueController.Instance == null)
+        {
+            Debug.LogError("DialogueController.Instance is null.");
+            return;
+        }
+
+        if (openingCharacter == null)
+        {
+            Debug.LogError("Opening character is not assigned on GameStateController.");
+            return;
+        }
+
+        DialogueController.Instance.StartNewDialogue(openingCharacter);
     }
 }

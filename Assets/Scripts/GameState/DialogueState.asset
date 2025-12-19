@@ -12,4 +12,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e630ebf21166a459a63e5ef3cc9018, type: 3}
   m_Name: DialogueState
   m_EditorClassIdentifier: 
-  stateCanvas: {fileID: 5701390090079411750, guid: c92476715bc6f51469b2213564a61b63, type: 3}

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e630ebf21166a459a63e5ef3cc9018, type: 3}
   m_Name: NavigationState
   m_EditorClassIdentifier: 
-  stateCanvas: {fileID: 8575553646890003966, guid: e76bef816d201a0449d1cc97cd4f80bf, type: 3}
+  stateCanvas: {fileID: 3103444364269008403, guid: ce0b47c4dcd86aa4ab252f1e20470f3d, type: 3}

@@ -19,6 +19,10 @@ public class NavigationView : MonoBehaviour
     [SerializeField] private Transform navButtonParentLeft;
     [SerializeField] private Transform navButtonParentRight;
     [SerializeField] private Transform interactButtonParent;
+    
+    [Header("Other UI References")]
+    [SerializeField] private TMP_Text roomNameText;
+    [SerializeField] private TMP_Text roomDescriptionText;
 
     //Button pools
     private ButtonPool<NavButtonView> navButtonPool;
@@ -39,7 +43,9 @@ public class NavigationView : MonoBehaviour
         List<RoomSO> adjRoomsDown, 
         List<RoomSO> adjRoomsLeft, 
         List<RoomSO> adjRoomsRight,
-        List<CharacterSO> characters)
+        List<CharacterSO> characters,
+        string currentRoomName,
+        string currentRoomDescription)
     {
         navButtonPool.ReleaseAllButtons();
         SetDirectionalButtons(adjRoomsUp, navButtonParentUp);
@@ -48,6 +54,9 @@ public class NavigationView : MonoBehaviour
         SetDirectionalButtons(adjRoomsRight, navButtonParentRight);
         
         SetInteractionButtons(characters, interactButtonParent);
+        
+        roomNameText.text = currentRoomName;
+        roomDescriptionText.text = currentRoomDescription;
     }
 
     private void SetDirectionalButtons(List<RoomSO> rooms, Transform parent)
