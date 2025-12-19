@@ -12,6 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 656fa48d3d5f34c44857ee1b866a4b7b, type: 3}
   m_Name: firstOfficer_Intro_Good
   m_EditorClassIdentifier: 
-  speaker: {fileID: 0}
-  dialogueText: []
-  Choices: []
+  speaker: {fileID: 11400000, guid: 4f9450df6847299438f5ac407de8e4b1, type: 2}
+  dialogueText:
+  - '"Glad to hear it! Our botanist has been begging for a second pair of hands for
+    a while now. Wouldn''t let me leave my desk until I read your file. Be sure to
+    thank him for the offer."'
+  Choices:
+  - choiceText: '"Absolutely! I''ve already started reading through his documentation
+      and publications!"'
+    destinationNode: {fileID: 11400000, guid: 57974082e77b151419557d0ebe6738ad, type: 2}
+    endDialogue: 0
+    requiredQuestFlags: []
+    forbiddenQuestFlags: []
+    grantFlags: []

@@ -73,9 +73,14 @@ public class DialogueController : MonoBehaviour
         
         //2. Else, check if character has been met.
         //If not, use character's introductory dialogue node
+        if (!GameDataManager.Instance.characterData.HasMet(CurrentSpeaker))
+        {
+            if (CurrentSpeaker.introDialogueNode != null) return CurrentSpeaker.introDialogueNode;
+        }
         
         //3. Else, use character's default dialogue node
-
+        if (CurrentSpeaker.defaultStartingDialogueNode != null) return CurrentSpeaker.defaultStartingDialogueNode;
+        
         return null;
     }
 
@@ -85,6 +90,13 @@ public class DialogueController : MonoBehaviour
         if (nextNode == null)
         {
             Debug.Log("Dialogue ended or no next node.");
+            
+            //Mark current speaker as met when dialogue ends
+            if (CurrentSpeaker != null && GameDataManager.Instance.characterData != null)
+            {
+                GameDataManager.Instance.characterData.MarkMet(CurrentSpeaker);
+            }
+            
             CurrentDialogueNode = null;
             GameStateController.Instance.ExitState();
             return;

@@ -12,6 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 656fa48d3d5f34c44857ee1b866a4b7b, type: 3}
   m_Name: firstOfficer_Intro_Neutral
   m_EditorClassIdentifier: 
-  speaker: {fileID: 0}
-  dialogueText: []
-  Choices: []
+  speaker: {fileID: 11400000, guid: 4f9450df6847299438f5ac407de8e4b1, type: 2}
+  dialogueText:
+  - '"Leaving your home system isn''t something to take lightly. I was nervous the
+    first time I stepped foot on a jump-craft. If you have any questions, or need
+    any advice,  let me or your supervisor Dr. Pavin know."'
+  Choices:
+  - choiceText: '"I have been looking forward to meeting Dr. Pavin."'
+    destinationNode: {fileID: 11400000, guid: 57974082e77b151419557d0ebe6738ad, type: 2}
+    endDialogue: 0
+    requiredQuestFlags: []
+    forbiddenQuestFlags: []
+    grantFlags: []

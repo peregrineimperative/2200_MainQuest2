@@ -12,6 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 656fa48d3d5f34c44857ee1b866a4b7b, type: 3}
   m_Name: firstOfficer_Intro_Reject
   m_EditorClassIdentifier: 
-  speaker: {fileID: 0}
-  dialogueText: []
-  Choices: []
+  speaker: {fileID: 11400000, guid: 4f9450df6847299438f5ac407de8e4b1, type: 2}
+  dialogueText:
+  - '"Ah. Thanks for letting me know in person. No hard feelings. Best of luck to
+    you."'
+  Choices:
+  - choiceText: '"Same to you. Safe travels."'
+    destinationNode: {fileID: 0}
+    endDialogue: 1
+    requiredQuestFlags: []
+    forbiddenQuestFlags: []
+    grantFlags:
+    - {fileID: 11400000, guid: bf88658ef1828d9459ade6196703391c, type: 2}

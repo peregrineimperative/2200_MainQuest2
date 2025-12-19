@@ -23,4 +23,6 @@ MonoBehaviour:
   adjRoomsLeft: []
   adjRoomsRight:
   - {fileID: 11400000, guid: e0040c4cbdb0ae242b8ec28e9ba77460, type: 2}
-  characters: []
+  characters:
+  - {fileID: 11400000, guid: 30ca9284331ce914f8964dca339e7a39, type: 2}
+  - {fileID: 11400000, guid: 4f9450df6847299438f5ac407de8e4b1, type: 2}

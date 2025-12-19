@@ -12,6 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 656fa48d3d5f34c44857ee1b866a4b7b, type: 3}
   m_Name: firstOfficer_Intro_GetQuest1
   m_EditorClassIdentifier: 
-  speaker: {fileID: 0}
-  dialogueText: []
-  Choices: []
+  speaker: {fileID: 11400000, guid: 4f9450df6847299438f5ac407de8e4b1, type: 2}
+  dialogueText:
+  - '"You''ll find that initiative is always appreciated. It''s a small bunch of
+    us, so everyone''s prone to wearing a few different hats."
+
+
+    All that said,
+    we''re on a clock, and I need to finish up down here. I''ll meet you up on the
+    bridge, introduce you to the captain and get you sorted. Sound good?"'
+  Choices:
+  - choiceText: '"I''ll see you there!"'
+    destinationNode: {fileID: 0}
+    endDialogue: 1
+    requiredQuestFlags: []
+    forbiddenQuestFlags: []
+    grantFlags:
+    - {fileID: 11400000, guid: 16628e3f8f3012346bb3072dc6e3952b, type: 2}
+    - {fileID: 11400000, guid: b1ba14a248eaf1146aaa4dd67ef7bb8b, type: 2}

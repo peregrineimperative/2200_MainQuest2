@@ -14,27 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speaker: {fileID: 11400000, guid: 4f9450df6847299438f5ac407de8e4b1, type: 2}
   dialogueText:
-  - '"Glad you were able to make it on such short notice. While I''d prefer a more
-    thorough interview with the captain, this is a quick refuel stop for us, and
-    the station doesn''t want us sitting around for more than a half-cycle. That
-    said, are you good to go? No worries if you need to back out."'
+  - "\"Welcome aboard the Morningtide! I'm First Officer Kasheen. Glad you were able
+    to make it on such short notice! \n\nWhile I'd prefer a more thorough interview
+    with the captain, this is a quick refuel stop for us, and the station doesn't
+    want us sitting around for more than a half-cycle. That said, are you good to
+    go? No worries if you need to back out.\""
   Choices:
   - choiceText: '"Agriculture gig on a interstellar hauler? I''ve been good to go
       since you sent the offer!"'
-    destinationNode: {fileID: 0}
+    destinationNode: {fileID: 11400000, guid: 0f30acb42e69b824fb66c34a64d14a73, type: 2}
     endDialogue: 0
     requiredQuestFlags: []
     forbiddenQuestFlags: []
     grantFlags: []
   - choiceText: '"I''d be lying if I said I wasn''t nervous, but I''d regret passing
       up on the chance to get out of here."'
-    destinationNode: {fileID: 0}
+    destinationNode: {fileID: 11400000, guid: ff136be2eda51ea45a954d446bf69c80, type: 2}
     endDialogue: 0
     requiredQuestFlags: []
     forbiddenQuestFlags: []
     grantFlags: []
   - choiceText: '"I actually came to let you know I couldn''t join up. Sorry."'
-    destinationNode: {fileID: 0}
+    destinationNode: {fileID: 11400000, guid: a28f9f092bd33b248a484ecf332e319f, type: 2}
     endDialogue: 0
     requiredQuestFlags: []
     forbiddenQuestFlags: []

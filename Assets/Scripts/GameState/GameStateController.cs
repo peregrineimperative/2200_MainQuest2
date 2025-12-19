@@ -46,6 +46,10 @@ public class GameStateController : MonoBehaviour
         //Initialize the stack
         GameStateStack = new Stack<GameStateSO>();
         GameStateStack.Push(NavigationState); //Set this to whatever should be the default game state. (Currently Navigation, but if I am cool and implement a MainMenu, then do that instead.)
+        
+        //Inelegant, but whatever
+        //Jump straight to opening dialogue
+        StartNewGame();
     }
 
     //Accessor for current game state

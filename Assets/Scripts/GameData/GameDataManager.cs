@@ -36,5 +36,19 @@ public class CharacterData
 {
     //public string characterName;
     //public int friendScore;
-    public HashSet<CharacterSO> CharactersMet;
+    
+    //Contains characters that player has met
+    public HashSet<CharacterSO> CharactersMet = new HashSet<CharacterSO>();
+    
+    public bool HasMet(CharacterSO character)
+    {
+        return character != null && CharactersMet.Contains(character);
+    }
+
+    public void MarkMet(CharacterSO character)
+    {
+        if (character == null) return;
+        CharactersMet.Add(character);
+    }
+
 }

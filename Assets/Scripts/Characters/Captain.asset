@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2aca407b97cf86349823a61957491bea, type: 3}
-  m_Name: FirstOfficer
+  m_Name: Captain
   m_EditorClassIdentifier: 
-  characterRole: First Officer
-  characterName: Kasheen
-  introDialogueNode: {fileID: 11400000, guid: 3763957390fa39945bbfbdee73ef45b9, type: 2}
+  characterRole: Captain
+  characterName: Follst
+  introDialogueNode: {fileID: 11400000, guid: be282a5a8726a0640b85750dbde56ee7, type: 2}
   defaultStartingDialogueNode: {fileID: 0}
