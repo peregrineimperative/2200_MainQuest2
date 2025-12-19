@@ -19,6 +19,7 @@ public class NavigationController : MonoBehaviour
         if (navView != null)
         {
             navView.OnNavButtonClicked += GoToRoom;
+            navView.OnInteractButtonClicked += StartDialogue;
         }
     }
 
@@ -27,6 +28,7 @@ public class NavigationController : MonoBehaviour
         if (navView != null)
         {
             navView.OnNavButtonClicked -= GoToRoom;
+            navView.OnInteractButtonClicked -= StartDialogue;
         }
     }
     

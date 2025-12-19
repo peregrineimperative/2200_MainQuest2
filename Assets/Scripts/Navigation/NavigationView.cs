@@ -25,12 +25,12 @@ public class NavigationView : MonoBehaviour
     [SerializeField] private TMP_Text roomDescriptionText;
 
     //Button pools
-    private ButtonPool<NavButtonView> navButtonPool;
+    private ButtonPool<ButtonView> navButtonPool;
     private ButtonPool<ButtonView> interactButtonPool;
     
     private void Awake()
     {
-        navButtonPool = new ButtonPool<NavButtonView>(navButtonPrefab, transform, 12);
+        navButtonPool = new ButtonPool<ButtonView>(navButtonPrefab, transform, 12);
         interactButtonPool = new ButtonPool<ButtonView>(interactButtonPrefab, interactButtonParent, 10);
     }
     
@@ -47,6 +47,7 @@ public class NavigationView : MonoBehaviour
         string currentRoomName,
         string currentRoomDescription)
     {
+        
         navButtonPool.ReleaseAllButtons();
         SetDirectionalButtons(adjRoomsUp, navButtonParentUp);
         SetDirectionalButtons(adjRoomsDown, navButtonParentDown);
@@ -62,7 +63,7 @@ public class NavigationView : MonoBehaviour
     private void SetDirectionalButtons(List<RoomSO> rooms, Transform parent)
     {
         foreach (RoomSO room in rooms) {
-            NavButtonView buttonView = navButtonPool.GetButton(parent);
+            ButtonView buttonView = navButtonPool.GetButton(parent);
             
             //Testing
             if (buttonView == null)
@@ -70,7 +71,8 @@ public class NavigationView : MonoBehaviour
                 Debug.LogWarning("Failed to get button from pool!");
                 continue;
             }
-            var buttonText = buttonView.buttonText;
+
+            var buttonText = buttonView.ButtonText;
             
             //Testing
             if (buttonText == null)
@@ -79,9 +81,9 @@ public class NavigationView : MonoBehaviour
                 continue;
             }
             
-            buttonView.buttonText.text = room.roomName;
+            buttonView.ButtonText.text = room.roomName;
             
-            buttonView.button.onClick.AddListener(() => OnNavButtonClicked?.Invoke(room));
+            buttonView.Button.onClick.AddListener(() => OnNavButtonClicked?.Invoke(room));
             
             buttonView.gameObject.SetActive(true);
         }

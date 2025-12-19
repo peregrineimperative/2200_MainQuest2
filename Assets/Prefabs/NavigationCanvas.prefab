@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f033921bb0523d3459b0d1b8ff5d560d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navButtonPrefab: {fileID: 7751339112993011988, guid: 59c683234ab3a1b439d7379d90e9c6ba, type: 3}
+  navButtonPrefab: {fileID: 7751339112993011988, guid: 92746c5bb8fcdd4439bd5a7d23b1c424, type: 3}
   interactButtonPrefab: {fileID: 7751339112993011988, guid: 0181c2172640afe458ab8f9fd9f7c2ba, type: 3}
   navButtonParentUp: {fileID: 5814236609467870196}
   navButtonParentDown: {fileID: 7030337660833462232}

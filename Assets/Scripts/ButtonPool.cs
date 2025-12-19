@@ -68,10 +68,7 @@ public class ButtonPool<T> where T: Component
         buttons.Enqueue(button);
 
         //clear previous navigation assignment
-        if (button is ButtonView buttonView && buttonView.Button != null)
-        {
-            buttonView.Button.onClick.RemoveAllListeners();
-        }
+        if (button is Button listener) listener.onClick.RemoveAllListeners();
 
         //deactivate and remove from parent
         button.gameObject.SetActive(false);

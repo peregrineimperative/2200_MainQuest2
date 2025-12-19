@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2167118013645807609}
   - component: {fileID: 899241686445605179}
   m_Layer: 5
-  m_Name: TargetRoomText
+  m_Name: ButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Target Room
+  m_text: ButtonText
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 8036761042623015517}
   - component: {fileID: 800340393699027895}
   - component: {fileID: 9161631121282577590}
-  - component: {fileID: 7790193049895457930}
+  - component: {fileID: -5467898713464767531}
   m_Layer: 5
   m_Name: NavigationButton
   m_TagString: Untagged
@@ -228,7 +228,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &7790193049895457930
+--- !u!114 &-5467898713464767531
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -237,11 +237,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7751339112993011988}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08c03de72e6a7364ebbae55954e519d9, type: 3}
+  m_Script: {fileID: 11500000, guid: 7351a8c1ba6b62d42a686e7db0da57ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 9161631121282577590}
   buttonText: {fileID: 899241686445605179}
+  lineRenderer: {fileID: 6291650832301132978}
 --- !u!1001 &3329308738665857484
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -252,7 +253,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 603612563384314838, guid: e3cb0a62efe4641478c376436524f4d9, type: 3}
       propertyPath: m_Name
-      value: UIOutline
+      value: ButtonOutline
       objectReference: {fileID: 0}
     - target: {fileID: 3191407909727277154, guid: e3cb0a62efe4641478c376436524f4d9, type: 3}
       propertyPath: m_Pivot.x
@@ -343,6 +344,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8747252373813054846, guid: e3cb0a62efe4641478c376436524f4d9, type: 3}
+      propertyPath: m_UseWorldSpace
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8747252373813054846, guid: e3cb0a62efe4641478c376436524f4d9, type: 3}
       propertyPath: m_Positions.Array.data[0].x
       value: -80
       objectReference: {fileID: 0}
@@ -390,5 +395,10 @@ PrefabInstance:
 --- !u!224 &179647268962619822 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3191407909727277154, guid: e3cb0a62efe4641478c376436524f4d9, type: 3}
+  m_PrefabInstance: {fileID: 3329308738665857484}
+  m_PrefabAsset: {fileID: 0}
+--- !u!120 &6291650832301132978 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 8747252373813054846, guid: e3cb0a62efe4641478c376436524f4d9, type: 3}
   m_PrefabInstance: {fileID: 3329308738665857484}
   m_PrefabAsset: {fileID: 0}

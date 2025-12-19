@@ -13,5 +13,13 @@ MonoBehaviour:
   m_Name: captain_Intro
   m_EditorClassIdentifier: 
   speaker: {fileID: 11400000, guid: 30ca9284331ce914f8964dca339e7a39, type: 2}
-  dialogueText: []
-  choices: []
+  dialogueText:
+  - '"You must be the new botanist the doctor was so excited about! Name''s Follst,
+    and I have the honor of running this fine vessel."'
+  choices:
+  - choiceText: '"Thank you for having me along, it''s good to meet you."'
+    destinationNode: {fileID: 0}
+    endDialogue: 0
+    requiredQuestFlags: []
+    forbiddenQuestFlags: []
+    grantFlags: []
