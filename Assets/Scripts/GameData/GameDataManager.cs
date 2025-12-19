@@ -23,7 +23,7 @@ public class GameDataManager : MonoBehaviour
 
     private void InitializeCharacterData()
     {
-        GameData savedData = SaveSystem.LoadGame();
+        //GameData savedData = SaveSystem.TryLoad();
     }
 }
 

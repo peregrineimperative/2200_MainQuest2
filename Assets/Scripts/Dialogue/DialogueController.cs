@@ -62,7 +62,7 @@ public class DialogueController : MonoBehaviour
         }
 
         // Tell the view to update itself
-        dialogueView.ShowNode(CurrentSpeaker, CurrentDialogueNode);
+        //dialogueView.ShowNode(CurrentSpeaker, CurrentDialogueNode);
 
     }
 
@@ -98,6 +98,6 @@ public class DialogueController : MonoBehaviour
         }
 
         CurrentDialogueNode = nextNode;
-        dialogueView.ShowNode(CurrentSpeaker, CurrentDialogueNode);
+        //dialogueView.ShowNode(CurrentSpeaker, CurrentDialogueNode);
     }
 }

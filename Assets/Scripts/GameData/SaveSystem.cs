@@ -10,8 +10,8 @@ public class SaveSystem
     public static void Save(GameData data)
     {
         //metadata
-        data.Version = Application.version; //exists in project settings
-        data.LastSavedTime = DateTime.UtcNow.ToString("o");
+        //data.Version = Application.version; //exists in project settings
+        //data.LastSavedTime = DateTime.UtcNow.ToString("o");
         
         string json = JsonUtility.ToJson(data, true); //serialize
         
@@ -45,3 +45,9 @@ public class SaveSystem
         }
     }
 }
+
+public class GameData
+{
+    
+}
+
