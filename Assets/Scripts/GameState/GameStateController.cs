@@ -26,6 +26,9 @@ public class GameStateController : MonoBehaviour
     public GameStateSO DialogueState => dialogueState;
     public GameStateSO ComputerState => computerState;
     public GameStateSO PauseMenuState => pauseMenuState;
+
+    [Header("New Game Information")] 
+    [SerializeField] private CharacterSO openingCharacter;
     
     private void Awake()
     {
@@ -77,5 +80,10 @@ public class GameStateController : MonoBehaviour
         CurrentState.stateCanvas.GetComponent<CanvasGroup>().alpha = 1f;
         CurrentState.stateCanvas.GetComponent<CanvasGroup>().interactable = true;
     }
-    
+
+    private void StartNewGame()
+    {
+        DialogueController.Instance.StartNewDialogue(openingCharacter);
+        EnterState(DialogueState);
+    }
 }

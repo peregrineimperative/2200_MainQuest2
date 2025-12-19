@@ -44,7 +44,7 @@ public class DialogueController : MonoBehaviour
         dialogueView.OnPromptButtonClicked -= GoToNextNode;
     }
 
-    private void StartNewDialogue(CharacterSO speaker)
+    public void StartNewDialogue(CharacterSO speaker)
     {
         if (speaker == null)
         {
@@ -71,17 +71,10 @@ public class DialogueController : MonoBehaviour
         //1. Look through list of active quest steps to see if one involves this character
         //If so, start from that step's associated dialogue node
         
-        //2. Else, check if friendship score is above 0 (unmet if zero)
+        //2. Else, check if character has been met.
         //If not, use character's introductory dialogue node
         
         //3. Else, use character's default dialogue node
-        
-        //testing:
-        if (CurrentSpeaker.introDialogueNode != null)
-            return CurrentSpeaker.introDialogueNode;
-
-        if (CurrentSpeaker.defaultStartingDialogueNode != null)
-            return CurrentSpeaker.defaultStartingDialogueNode;
 
         return null;
     }

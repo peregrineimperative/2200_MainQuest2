@@ -1,10 +1,13 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class GameDataManager : MonoBehaviour
 {
     public static GameDataManager Instance { get; private set; } //Singleton
     
     [SerializeField] private CharacterDatabaseSO characterDatabase;
+    
+    public CharacterData characterData = new CharacterData();
     
     private void Awake()
     {
@@ -31,12 +34,7 @@ public class GameDataManager : MonoBehaviour
 [System.Serializable]
 public class CharacterData
 {
-    public string characterName;
-    public int friendScore;
-
-    public CharacterData(string name, int defaultScore = 0)
-    {
-        characterName = name;
-        friendScore = defaultScore;
-    }
+    //public string characterName;
+    //public int friendScore;
+    public HashSet<CharacterSO> CharactersMet;
 }
